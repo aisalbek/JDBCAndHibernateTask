@@ -52,13 +52,10 @@ public class UserDaoJdbcImpl implements UserDao {
 
     public void removeUserById(long id) {
         String remove = "delete from aisalbek where id = ?";
-
         try (Connection connection = Util.getConnection();
              PreparedStatement statement = connection.prepareStatement(remove)) {
-            ResultSet resultSet = statement.executeQuery(remove);
-            User user = new User();
-            resultSet.getLong(1);
-            resultSet.next();
+           statement.setLong(1,id);
+           statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

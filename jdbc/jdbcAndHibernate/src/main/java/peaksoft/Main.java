@@ -15,7 +15,7 @@ public class Main {
 //        for (User user :userDaoJdbc.getAllUsers()) {
 //            System.out.println(user);
 //        }
-//        userDaoJdbc.removeUserById(2);
+        userDaoJdbc.removeUserById(2);
 //          userDaoJdbc.cleanUsersTable();
 
     }
